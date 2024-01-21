@@ -13,19 +13,29 @@
     <script>
 
       function openAcc(index) {
-      
+        // Este script recebe um indice de acordeão, sendo 0 o primeiro, 1 o segundo, etc etc
+        // E para todos os acordeões de bootstrap neste documento ativa o que foi selecionado de modo automatico
+        
+        // Pega em todos os objectos de botão dos acordiões e guarda-os numa lista
         const projects = [...document.getElementsByClassName("accordion-button")];
+        // Pega em todos os corpos de texto dos acordiões e guarda-os numa lista
         const bodies = [...document.getElementsByClassName("accordion-collapse")];
 
+        // Para cada botão salvo na lista define o como colapsado, isto é esconde a cor azul da selecção
         projects.filter(p => !p.className.includes("collapsed")).forEach(p => p.className += " collapsed")
+        // Para cada corpo de texto salvo na lista define o como invisivel, isto é esconde o texto completamente
         bodies.forEach(p => p.className = p.className.replace("show", ""))
+
+        // Agora que todos os elementos estão definidos como inativos, ativamos o elemento desejado
         
+        // define o botão do elemento que foi selecionado como ativo, isto é pinta-o de azul
         projects[index].className = projects[index].className.replace("collapsed", "");
+        // define o corpo do texto que foi seleciona como ativo, isto é mostra-o ao utilizador
         bodies[index].className = bodies[index].className + " show";
 
+        // Automaticamente faz scroll até ao corpo selecionado
         bodies[index].scrollIntoView();
       }
-
     </script>
 
   </head>
@@ -70,17 +80,17 @@
 
     <div class="row">
       <h4 class="title">Tecnologias web</h4>
-      <div class="d-flex justify-content-md-center m-50">
+      <div class="w-flex justify-content-md-center m-50">
         <img class="icon seperate" src="img/html.png">
         <img class="icon seperate" src="img/css.png">
         <img class="icon seperate" src="img/js.png">
-        <img class="icon seperate" src="img/logo-php.png">
+        <img class="icon seperate" src="https://pngimg.com/d/php_PNG35.png">
         <img class="icon seperate" src="img/boot-logo.png">
         <img class="icon seperate" src="img/vscode.png">
       </div>
       
       <h4 class="title">Ilustração e design</h4><br>
-      <div class="d-flex justify-content-md-center m-50">
+      <div class="w-flex justify-content-md-center m-50">
         <img class="icon seperate" src="img/logo-clip.png">
         <img class="icon seperate" src="https://play-lh.googleusercontent.com/QcfhlXm32JDnj3WM2-TSL78ad99x4slovX4OzCSLSPU3uRN-mGXpKyM_yeXiewhz0Lk">
         <img class="icon seperate" src="img/pts.png">
@@ -105,10 +115,8 @@
       </div>
 
       <div class="row">
-
         <div class="card-group">
           <div class="card">
-      
             <div class="card-body text-center">
               <h3 class="card-title"> Sabores do Sol </h3>
               <p class="card-text">O meu Projeto de Aptidão Profissional (PAP) do ensino secundário</p>
@@ -147,28 +155,19 @@
               </h2>
               <div id="collapse" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-
                   <div class="row">
-
                   <div class="col-sm">
-
                     <h2>Sabores do Sol</h2>
                     <p>Uma pastelaria fictícia que usa plantas comestíveis como o seu principal meio de decoração de bolos.</p>
                     <p>Foi criada para o <strong>Projeto de Aptidão Profissional</strong> para o meu ano final no Colégio de Gaia.</p>
                     <p>Para este projeto foram criados diversos conteúdos e informações como um logotipo totalmente original e um website independente que funciona através da linguagem de programação PHP.</p>
-                    
                     <a href="https://github.com/MarySlaOq/saboressol" class="btn btn-secondary"><i class="fab fa-github"></i> Código fonte</a>
-
                   </div>
-
                   <div class="col-sm">
-
+                    <br>
                     <img class="img-fluid" src="img/sabores-sol.png" alt="" srcset="">
-
                   </div>
-
                 </div>
-
                 </div>
               </div>
             </div>
@@ -197,6 +196,7 @@
 
                   <div class="col-sm">
 
+                    <br>
                     <img class="img-fluid" src="img/character-archive.png" alt="" srcset="">
 
                   </div>
@@ -221,17 +221,18 @@
 
                     <h2>Rumble</h2>
                     <p>A animação Rumble foi uma animação feita <strong>em grupo</strong> entre mim e mais dois colegas da licenciatura de multimédia.</p>
-                    <p>Teve o intuito de participar da edição de 2024 da Mad Games Jam, então tem um tema relacionado com jogos de vídeo sobre aventura</p>
-                    <p>Além de personagens, outros aspectos caracterizadores do mundo podem também ser definidos, como a geografia do mundo, um calendario de eventos do mundo, e uma linha temporal de eventos.</p>
+                    <p>Com Edgar Carneiro e Tomás Sarreira, tivemos o intuito de participar da edição de 2024 da Mad Games Jam, então tem um tema relacionado com jogos de vídeo sobre aventura.</p>
 
                     <a href="https://www.youtube.com/watch?v=7z25ZZ3DHds" class="btn btn-primary"></i>Música original</a>
 
                   </div>
 
                   <div class="col-sm">
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="img/rumble.mp4" allowfullscreen></iframe>
-                    </div>
+                    <br>
+
+                    <video class="embed-responsive embed-responsive-16by9" controls>
+                      <source src="img/rumble.mp4" type="video/mp4" />
+                    </video>
 
                   </div>
 
